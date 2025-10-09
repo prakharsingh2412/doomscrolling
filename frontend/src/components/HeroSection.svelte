@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Globe from '../utils/globe.svelte';
+  import Globe from './globe.svelte';
 </script>
 
 <section class="relative h-screen flex justify-center items-center text-center overflow-hidden bg-lapis">
