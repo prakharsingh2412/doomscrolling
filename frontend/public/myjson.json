@@ -1,0 +1,27 @@
+{
+  "globeData": [
+    {
+      "city": "New York",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "population": 8419000
+    },
+    {
+      "city": "London",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "population": 8982000
+    },
+    {
+      "city": "Tokyo",
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "population": 13929000
+    }
+  ],
+  "settings": {
+    "showLabels": true,
+    "animationSpeed": 1.2,
+    "theme": "dark"
+  }
+}
