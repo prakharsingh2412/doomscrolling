@@ -1,0 +1,41 @@
+const Navbar = () => {
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm border-b border-white/5">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 bg-blue-500/10 rounded-full blur-[2px] relative">
+            <div className="absolute inset-0 bg-blue-400/60 rounded-full blur-sm"></div>
+          </div>
+          <h1 className="text-white text-xl font-semibold tracking-wide">
+            Doom
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              Scroll
+            </span>
+          </h1>
+        </div>
+
+        {/* Right side - Links & Buttons */}
+        <div className="flex items-center gap-8">
+          {/* Nav Links */}
+          <ul className="flex items-center gap-8 text-slate-400">
+            <li className="hover:text-blue-400 transition-colors cursor-pointer">Home</li>
+            <li className="hover:text-blue-400 transition-colors cursor-pointer">About</li>
+          </ul>
+
+          {/* Buttons */}
+          <div className="flex items-center gap-4">
+            <button className="px-5 py-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-lg transition-colors">
+              Sign In
+            </button>
+            <button className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

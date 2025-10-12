@@ -1,8 +1,7 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
-  "compilerOptions": {
-    "composite": true
-  },
-  "include": ["src/**/*", "src/**/*.svelte", "svelte.d.ts"],
-  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }
