@@ -1,7 +1,7 @@
 import { Globe3D } from '../components/Globe3D';
 import  Navbar from '../components/Navbar';
-
-const Hero = () => {
+import HowItWorks from '../components/HowItWorks';
+const Home = () => {
   return (
     <div className="size-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
       <Navbar />
@@ -83,8 +83,9 @@ const Hero = () => {
               </svg>
             </div>
           </section>
-        </div>
+        <HowItWorks />
+      </div>
   )
 }
 
-export default Hero
+export default Home
