@@ -1,6 +1,33 @@
+import { useState, useEffect } from "react";
+
 const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const controlNavbar = () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling down
+      setShow(false);
+    } else {
+      // Scrolling up
+      setShow(true);
+    }
+    setLastScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm border-b border-white/5">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm border-b border-white/5 transition-transform duration-300 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
         {/* Logo */}
         <div className="flex items-center gap-2">

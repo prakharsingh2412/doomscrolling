@@ -1,6 +1,7 @@
 import { Globe3D } from '../components/Globe3D';
 import  Navbar from '../components/Navbar';
 import HowItWorks from '../components/HowItWorks';
+import AboutSection from '../components/About';
 const Home = () => {
   return (
     <div className="size-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
@@ -83,6 +84,7 @@ const Home = () => {
               </svg>
             </div>
           </section>
+        <AboutSection />
         <HowItWorks />
       </div>
   )
