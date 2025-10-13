@@ -22,7 +22,7 @@ export default function ResponsiveDevicesShowcase() {
     }, []);
 
     return (
-        <section className="w-full min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white px-6 lg:px-12 py-16 gap-12">
+        <section className="relative w-full min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900 text-white px-6 lg:px-12 py-16 gap-12">
             {/* Left Side - Device Displays */}
             <div className="w-full lg:w-1/2 flex items-center justify-center">
                 <div className="relative w-full max-w-2xl h-[500px]">
