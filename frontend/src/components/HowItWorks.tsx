@@ -87,13 +87,13 @@ export default function HowItWorks() {
       id="how-it-works-section"
       className="relative w-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 text-white py-8 md:py-12"
     >
-      <h1 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent ">
+      <h1 className="text-5xl md:text-6xl font-bold text-center mt-6 mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent ">
         How It Actually Works
       </h1>
 
       <div
         ref={stickyRef}
-        className="sticky top-0 flex items-start justify-center overflow-hidden"
+        className="sticky top-0 flex items-start justify-center overflow-hidden pt-8"
       >
         {stages.map((stage, index) => (
           <div
