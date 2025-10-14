@@ -8,11 +8,17 @@ const Home = () => {
     <div className="size-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 overflow-hidden">
       <Navbar />
       <div className="h-20"></div>
-      <HeroSection />
-      <AboutSection />
-      <HowItWorks />
+      <section id="home">
+        <HeroSection />
+      </section>
+      <section id="about">
+        <AboutSection />
+      </section>
+      <section id="how-it-works">
+        <HowItWorks />
+      </section>
       <Footer />
-      </div>
+    </div>
   )
 }
 

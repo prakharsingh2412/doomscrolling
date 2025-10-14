@@ -19,6 +19,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
+  // Smooth scroll function
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       {/* Navbar */}
@@ -41,10 +49,29 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center gap-8">
+            {/* Nav Links */}
             <ul className="flex items-center gap-8 text-slate-400">
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">Home</li>
-              <li className="hover:text-blue-400 transition-colors cursor-pointer">About</li>
+              <li
+                onClick={() => scrollToSection("home")}
+                className="hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                Home
+              </li>
+              <li
+                onClick={() => scrollToSection("about")}
+                className="hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                About
+              </li>
+              <li
+                onClick={() => scrollToSection("how-it-works")}
+                className="hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                How it works
+              </li>
             </ul>
+
+            {/* Buttons */}
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setShowSignIn(true)}

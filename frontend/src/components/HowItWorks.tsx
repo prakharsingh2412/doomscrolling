@@ -5,12 +5,33 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stages = [
-  { title: "Stage 1: Discovery", description: "Explore the world of endless scrolling and uncover hidden gems of the internet." },
-  { title: "Stage 2: Immersion", description: "Dive deep into engaging content as the feed pulls you in one post at a time." },
-  { title: "Stage 3: Realization", description: "You begin to notice time slipping away while you keep scrolling for more." },
-  { title: "Stage 4: Reflection", description: "You pause, wondering where the last few hours went." },
-  { title: "Stage 5: Awakening", description: "Finally, you break free — until the next scroll begins." },
+  {
+    title: "Stage 1: Discovery",
+    description:
+      "It starts innocently enough — you unlock your phone without even thinking, maybe just to check one notification. You open your favorite app, and the feed instantly greets you with a stream of new posts, fresh updates, and trending stories. A meme makes you laugh, a video surprises you, a thread intrigues you. The content feels endless, and the more you scroll, the more it learns what keeps you hooked. Every image, every short clip, every headline feels designed to make you pause — just for a moment longer. You’re not looking for anything specific, yet somehow everything feels interesting, perfectly timed, and oddly personal.",
+  },
+  {
+    title: "Stage 2: Immersion",
+    description:
+      "Minutes blur into moments. The world around you starts to fade as the glow of your screen takes over your attention. You’re no longer just watching — you’re absorbed. The algorithm knows exactly what to show you next: humor, outrage, curiosity, comfort. Your emotions shift with each swipe. You scroll through opinions that spark debates in your mind, videos that fill you with nostalgia, and content that makes you feel seen. Your thumb moves automatically, a rhythm you don’t control anymore. Somewhere between entertainment and obsession, you stop realizing how much time is passing. The digital universe feels alive, feeding you exactly what you didn’t know you needed.",
+  },
+  {
+    title: "Stage 3: Realization",
+    description:
+      "You glance at the clock and freeze. What you thought was ten minutes has become an hour. Notifications have piled up, your surroundings are quiet, and your coffee has gone cold. You scroll one more time — maybe there’s something new, something exciting — but the posts start to repeat. You begin to recognize the same jokes, the same trends, even the same faces. Your brain feels overstimulated, yet you crave just one more hit of novelty. A small voice whispers that you should stop. But the feed keeps flowing — infinite, hypnotic, and just unpredictable enough to keep you there a little longer.",
+  },
+  {
+    title: "Stage 4: Reflection",
+    description:
+      "You pause, finally letting your thumb rest. The silence of the real world feels almost too quiet compared to the constant buzz of stimulation you’ve been swimming in. You start to wonder — what did you actually gain from the last few hours? The posts blur together in your memory, leaving behind fragments of emotion without context. A faint sense of emptiness sets in, like waking from a vivid dream you can’t quite remember. You scroll back, searching for something meaningful, but all you find is repetition. The bright light of the screen reflects in your tired eyes, and for the first time, you see how deep the rabbit hole really goes.",
+  },
+  {
+    title: "Stage 5: Awakening",
+    description:
+      "You finally close the app. The glow disappears, replaced by the soft light of reality. The quiet feels strange but peaceful. You look around — the world is still here, unchanged, waiting for you. For the first time in hours, you notice the sound of your surroundings, the stillness of the air, the simple act of breathing. You promise yourself it won’t happen again, that you’ll be more mindful next time. But deep down, you know how easily the cycle restarts. The next scroll is always waiting — patient, enticing, and one tap away. You smile faintly, acknowledging the truth: escaping is possible, but staying away is the real challenge.",
+  },
 ];
+
 
 export default function HowItWorks() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -25,7 +46,7 @@ export default function HowItWorks() {
     gsap.set(cards, { opacity: 0, y: 50 });
     gsap.set(cards[0], { opacity: 1, y: 0 });
 
-    const cardHeight = window.innerHeight * 0.6; // one card height
+    const cardHeight = window.innerHeight * 0.71; // one card height
     const spacing = 10;
 
     // Scroll distance to transition between all cards
@@ -66,7 +87,7 @@ export default function HowItWorks() {
       id="how-it-works-section"
       className="relative w-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 text-white py-8 md:py-12"
     >
-      <h1 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+      <h1 className="text-5xl md:text-6xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent ">
         How It Actually Works
       </h1>
 
