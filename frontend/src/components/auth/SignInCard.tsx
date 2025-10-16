@@ -3,15 +3,17 @@ import { useState } from "react";
 interface SignInCardProps {
   onClose: () => void;
   onSwitch: () => void;
+  onSuccess: () => void;
 }
 
-const SignInCard = ({ onClose, onSwitch }: SignInCardProps) => {
+const SignInCard = ({ onClose, onSwitch, onSuccess }: SignInCardProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Sign In:", { email, password });
+    onSuccess();
   };
 
   return (

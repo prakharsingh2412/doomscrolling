@@ -1,7 +1,16 @@
-import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home"; 
 
-export default function App() {
+const App = () => {
   return (
-   <Home/>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </>
   );
-}
+};
+
+export default App;

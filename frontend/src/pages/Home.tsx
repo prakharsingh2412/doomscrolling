@@ -1,8 +1,8 @@
-import  Navbar from '../components/Navbar';
-import HowItWorks from '../components/HowItWorks';
-import AboutSection from '../components/About';
-import HeroSection from '../components/Hero';
-import Footer from '../components/Footer';
+import Navbar from '../components/home/Navbar';
+import HowItWorks from '../components/home/HowItWorks';
+import AboutSection from '../components/home/About';
+import HeroSection from '../components/home/Hero';
+import Footer from '../components/home/Footer';
 const Home = () => {
   return (
     <div className="size-full bg-gradient-to-b from-slate-950 via-blue-950 to-slate-950 overflow-hidden">

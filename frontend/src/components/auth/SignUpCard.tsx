@@ -3,9 +3,10 @@ import { useState } from "react";
 interface SignUpCardProps {
   onClose: () => void;
   onSwitch: () => void;
+  onSuccess: () => void;
 }
 
-const SignUpCard = ({ onClose, onSwitch }: SignUpCardProps) => {
+const SignUpCard = ({ onClose, onSwitch ,onSuccess }: SignUpCardProps) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,6 +14,7 @@ const SignUpCard = ({ onClose, onSwitch }: SignUpCardProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Sign Up:", { username, email, password });
+    onSuccess();
   };
 
   return (

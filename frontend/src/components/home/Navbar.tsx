@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import SignInCard from "./auth/SignInCard";
-import SignUpCard from "./auth/SignUpCard";
+import { useNavigate } from "react-router-dom";
+import SignInCard from "../auth/SignInCard";
+import SignUpCard from "../auth/SignUpCard";
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
@@ -8,6 +9,9 @@ const Navbar = () => {
   const [showSignIn, setShowSignIn] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
+  const navigate = useNavigate(); 
+
+  // Handles hiding/showing navbar on scroll
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) setShow(false);
     else setShow(true);
@@ -19,12 +23,17 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
-  // Smooth scroll function
+  // Smooth scroll to section
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // ✅ When user successfully signs in or signs up
+  const handleAuthSuccess = () => {
+    setShowSignIn(false);
+    setShowSignUp(false);
+    navigate("/dashboard"); // redirects to dashboard page
   };
 
   return (
@@ -36,6 +45,7 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-5">
+          {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-3 h-3 bg-blue-500/10 rounded-full blur-[2px] relative">
               <div className="absolute inset-0 bg-blue-400/60 rounded-full blur-sm"></div>
@@ -48,8 +58,9 @@ const Navbar = () => {
             </h1>
           </div>
 
+          {/* Nav Links & Buttons */}
           <div className="flex items-center gap-8">
-            {/* Nav Links */}
+            {/* Links */}
             <ul className="flex items-center gap-8 text-slate-400">
               <li
                 onClick={() => scrollToSection("home")}
@@ -90,7 +101,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Modals */}
+      {/* Sign In Modal */}
       {showSignIn && (
         <SignInCard
           onClose={() => setShowSignIn(false)}
@@ -98,9 +109,11 @@ const Navbar = () => {
             setShowSignIn(false);
             setShowSignUp(true);
           }}
+          onSuccess={handleAuthSuccess} // ✅ Pass navigation handler
         />
       )}
 
+      {/* Sign Up Modal */}
       {showSignUp && (
         <SignUpCard
           onClose={() => setShowSignUp(false)}
@@ -108,6 +121,7 @@ const Navbar = () => {
             setShowSignUp(false);
             setShowSignIn(true);
           }}
+          onSuccess={handleAuthSuccess} // ✅ Pass navigation handler
         />
       )}
     </>
